@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee_code: MyString
+  last_name: MyString
+  first_name: MyString
+  middle_name: 
+  gender_id: 
+  position_id: 
+  department_id: 
+  employment_type_id: 
+
+two:
+  employee_code: MyString
+  last_name: MyString
+  first_name: MyString
+  middle_name: 
+  gender_id: 
+  position_id: 
+  department_id: 
+  employment_type_id: 

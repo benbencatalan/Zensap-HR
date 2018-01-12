@@ -1,0 +1,57 @@
+<%= form_with(model: employee, local: true) do |form| %>
+  <% if employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :employee_code %>
+    <%= form.text_field :employee_code, id: :employee_employee_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :employee_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :employee_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :middle_name %>
+    <%= form.text_field :middle_name, id: :employee_middle_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender_id %>
+    <%= form.select :gender_id, options_for_select(Gender.all.map { |category| [category.name, category.id] }) %> 
+  </div>
+
+  <div class="field">
+    <%= form.label :position_id %>
+    <%= form.select :position_id, options_for_select(Position.all.map { |category| [category.name, category.id] }) %> 
+  </div>
+
+  <div class="field">
+    <%= form.label :department_id %>
+     <%= form.select :department_id, options_for_select(Department.all.map { |category| [category.name, category.id] }) %> 
+  </div>
+
+  <div class="field">
+    <%= form.label :employment_type_id %>
+     <%= form.select :employment_type_id, options_for_select(EmploymentType.all.map { |category| [category.name, category.id] }) %> 
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
